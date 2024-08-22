@@ -1,11 +1,10 @@
 import React from "react";
-
-import Expense from "./Expense";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <div>
-      <Expense />
+      <Navbar />
     </div>
   );
 }
