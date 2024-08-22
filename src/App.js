@@ -1,8 +1,13 @@
 import React from "react";
-import Me from "./Me";
+
+import Expense from "./Expense";
 
 function App() {
-  return <Me />;
+  return (
+    <div>
+      <Expense />
+    </div>
+  );
 }
 
 export default App;
