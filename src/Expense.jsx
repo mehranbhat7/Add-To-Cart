@@ -1,60 +1,34 @@
 import React, { useState } from "react";
 
 const Expense = () => {
-  const [inp, setInp] = useState("");
-  const [amount, setAmount] = useState("");
-  const [expenses, setExpenses] = useState([]);
-
+  const [input, setinput] = useState("");
+  const [amount, setamount] = useState("");
+  const [expense, setexpense] = useState([]);
   function handle() {
-    if (!inp || !amount) {
-      return;
-    }
-    const newExpense = {
-      id: expenses.length + 1,
-      title: inp,
-      amount: amount,
-    };
-    setExpenses([...expenses, newExpense]);
-    setInp("");
-    setAmount("");
+    if (!input || !amount) return;
   }
-
-  const deletee = (id) => {
-    setExpenses(expenses.filter((expense) => expense.id !== id));
+  const newex = {
+    id: expense.length + 1,
+    title: input,
+    amount: amount,
   };
+  setexpense([...expense, newex]);
 
   return (
     <>
-      <div>
-        <h1>Expense Tracker</h1>
-        <div>
-          <input
-            type="text"
-            placeholder="Enter expense title"
-            required
-            onChange={(e) => setInp(e.target.value)}
-            value={inp}
-          />
-          <input
-            type="number"
-            placeholder="Enter amount"
-            required
-            onChange={(e) => setAmount(e.target.value)}
-            value={amount}
-          />
-          <button onClick={handle}>Add expense</button>
-        </div>
-        <div>
-          <ul>
-            {expenses.map((ele) => (
-              <li key={ele.id}>
-                {ele.title} - ${ele.amount}
-                <button onClick={() => deletee(ele.id)}>DELETE</button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <h1>EXPENSE TRACKER</h1>
+      <input type="text" onChange={(e) => setinput(e.target.value)} />
+      <input type="number" onChange={(e) => setamount(e.target.value)} />
+      <button onClick={handle}>Add expense</button>
+      <ul>
+        {expense.localeCompare((ele) => {
+          return (
+            <li key={ele.id}>
+              {ele.id} {ele.amount}
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 };
