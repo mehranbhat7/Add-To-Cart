@@ -14,7 +14,7 @@ const Cart = ({ cart, setcart }) => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">
+      <h2 className="text-2xl font-bold mb-4 sticky top-24">
         Total Price: ${totalPrice.toFixed(2)}
       </h2>
 
