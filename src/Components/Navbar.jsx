@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { IoMdCart } from "react-icons/io";
 
 const Navbar = ({ size }) => {
@@ -9,10 +10,13 @@ const Navbar = ({ size }) => {
           MY CART
         </div>
         <div className="flex">
-          <h1 className="text-5xl text-white cursor-pointer">
+          <Link to="/cart">
             {" "}
-            <IoMdCart />
-          </h1>
+            <h1 className="text-5xl text-white cursor-pointer">
+              {" "}
+              <IoMdCart />
+            </h1>
+          </Link>
           <p className="font-semibold">{size}</p>
         </div>
       </div>
