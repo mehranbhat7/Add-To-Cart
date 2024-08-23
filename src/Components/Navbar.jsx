@@ -5,7 +5,7 @@ import { IoMdCart } from "react-icons/io";
 const Navbar = ({ size }) => {
   return (
     <>
-      <div className="bg-red-300 h-24 flex p-8 justify-between">
+      <div className="bg-red-300 h-24 flex p-8 justify-between sticky top-0">
         <div className="text-4xl font-bold font-serif text-white underline cursor-pointer">
           MY CART
         </div>
