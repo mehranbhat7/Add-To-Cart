@@ -28,7 +28,10 @@ function App() {
         <Navbar size={cart.length} />
         <Routes>
           <Route path="/" element={<Shop handleclick={handleClick} />} />{" "}
-          <Route path="/cart" element={<Cart cart={cart} />} />{" "}
+          <Route
+            path="/cart"
+            element={<Cart cart={cart} setcart={setCart} />}
+          />{" "}
         </Routes>
         {warning && (
           <div className="fixed bottom-0 left-0 right-0 bg-red-500 p-4 text-center text-white">
